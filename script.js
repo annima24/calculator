@@ -39,10 +39,14 @@ function operate(a,b,c)  {
 //consolelogs a click    
 display = document.getElementById('display');
 function click(e)    {
-    console.log(e.target);
-    display.innerHTML = '5318008'
+    display.innerHTML = e.target.textContent;
 }
 
+function clearDisplay(e)    {
+    display.innerHTML = ''
+}
+
+//to do the math operation you need to have a const that is doc.getelemnt or whatever that is connected to the display div, that way when an operator is clicked it can take the const that was in the div before the operator and compute it with the next variable when equal is pressed. or something
 
 one.addEventListener('click', click);
 two.addEventListener('click', click);
@@ -59,7 +63,4 @@ minus.addEventListener('click', click);
 times.addEventListener('click', click);
 equals.addEventListener('click', click);
 divide.addEventListener('click', click);
-clear.addEventListener('click', click);
-
-
-//
+clear.addEventListener('click', clearDisplay);
